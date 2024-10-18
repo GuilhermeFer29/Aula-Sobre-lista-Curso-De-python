@@ -9,6 +9,9 @@ for e in range(n):
     num = int(input('Informe um numero'))
 
     list.append(num)
+print(list)
 troca = list[-1]
 list[-1] = list[0] 
 list[ 0 ] = troca   
+
+print(list)
