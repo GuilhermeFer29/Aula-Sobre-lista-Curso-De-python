@@ -1,7 +1,16 @@
 def inserir_contato(contatos, nome , telefone):
     contatos[ nome ] = telefone
     
+def remover_contato(contatos, nome):
+    contatos.pop(nome)
 
+def buscar_contato(contatos,  nome):
+
+    if nome in contatos :
+        return contatos[nome]
+    else:
+        return None
+  
 def imprimir_contatos(contatos):
     for nome , telefone in contatos.items():
         print(nome,',', telefone)
@@ -27,9 +36,17 @@ while True :
         inserir_contato(contatos_telefonicos,  nome , telefone)
 
     elif opcao == 2:
-        pass
+        nome = input('Insira um nome :')
+        remover_contato(contatos_telefonicos, nome)
     elif opcao == 3 : 
-        pass
+        nome = input('Insira um nome :')
+
+        telefone = buscar_contato(contatos_telefonicos, nome)
+
+        if telefone != None:
+            print(telefone)
+        else:
+            print('Contato não Encontrado')    
     elif opcao == 4 :
         imprimir_contatos(contatos_telefonicos)
     elif opcao == 0 :
